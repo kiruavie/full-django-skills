@@ -1,16 +1,32 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 # Create your views here.
 def home(request):
-    return HttpResponse("<h1>Home</h1>")
+    list = ["js", "py", "php", "c#", "c++", "ruby"]
+    context = {
+        "list":list
+    }
+    user = request.user
+
+    if user.is_authenticated:
+        context = {
+            "list" : list,
+            "user": user
+
+        }
+    if user.is_authenticated:
+        context['user'] = user
+
+    else:
+        context["user"] = "deconnecté"
+    return render(request, "home.html", context)
 
 
 def about(request):
-    return HttpResponse("About page")
+    return render(request, "about.html")
 
 
 def contact(request):
-    print(request.user)
-    return HttpResponse("Contacts page")
+    return render(request, "contact.html")
+

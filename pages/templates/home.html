@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %} {% include "navbar.html" %}
+<h1>Welcome to the Home Page</h1>
+<p>This is the home page content.</p>
+
+{% if list %}
+<center>
+  {% for i in list %}
+  <li style="list-style-type: none">{{forloop.counter}} - {{i}}</li>
+
+  {% endfor %}
+</center>
+{% endif %} {% if request.user.is_authenticated %}
+<h1>Hi {{ request.user.username }}</h1>
+{% elif request.user.username == "lev" %}
+<h1>Welcome back Lev</h1>
+{% else %}
+<h1>You are logged in</h1>
+{% endif %} {% endblock %}
