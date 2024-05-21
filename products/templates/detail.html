@@ -1,0 +1,21 @@
+{% extends "base.html"%} {% block title %} Product detail {% endblock title %}
+{% block content %} {% include "navbar.html" %}
+
+<h1>Products</h1>
+<p>Product detail</p>
+
+<div>
+  <ul>
+    {% for obj in objects %}
+    <strong> {{forloop.counter}} </strong>
+    <li>
+      <p>Name : {{obj.name}}</p>
+      <p>Description : {{obj.description}}</p>
+      <p>Price : {{obj.price}}</p>
+      <p>Active : {{obj.active}}</p>
+      <p>Live : {{obj.live}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}

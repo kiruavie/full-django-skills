@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 # Create your views here.
 def home(request):
     list = ["js", "py", "php", "c#", "c++", "ruby"]
@@ -24,7 +23,15 @@ def home(request):
 
 
 def about(request):
-    return render(request, "about.html")
+    list = [1,2,3,4,3,7,8,0,6]
+    context = {
+        "list":list,
+        "title": "about us",
+        "number":123
+    }
+    return render(request, "about.html", context)
+
+
 
 
 def contact(request):

@@ -1,4 +1,10 @@
 {% extends "base.html" %} {% block content %} {% include "navbar.html" %}
 <h1>About page</h1>
 <p>This is this an about page content.</p>
-{% endblock %}
+
+<h2>{{title | capfirst}}</h2>
+
+{% for x in list %}
+
+<li>{{x | add:100}}</li>
+{% endfor %} {% endblock content %}

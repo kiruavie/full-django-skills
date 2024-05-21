@@ -7,3 +7,6 @@ class Product(models.Model):
     price = models.FloatField()
     active = models.BooleanField()
     live = models.BooleanField(default=True)
+
+
+    
