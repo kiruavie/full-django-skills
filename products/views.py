@@ -21,3 +21,10 @@ def product_create(request):
         "message": message
     }
     return render(request, "create.html", context)
+
+
+# def product_create_view(request):
+#     print(request.GET)
+#     print(request.POST)
+
+#     return render(request, "create.html")
